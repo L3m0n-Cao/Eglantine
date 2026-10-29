@@ -21,8 +21,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: linux-x86_64
-            runner: ubuntu-24.04
+          # - platform: linux-x86_64
+          #   runner: ubuntu-24.04
           - platform: windows-x86_64
             runner: windows-2022
 
@@ -126,7 +126,7 @@ jobs:
 
       - name: Build
         shell: bash
-        run: cmake --build build/release --target yuzu --parallel
+        run: cmake --build build/release --target eglantine --parallel
 
       - name: Package Linux binary
         if: matrix.platform == 'linux-x86_64'
